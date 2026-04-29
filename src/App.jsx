@@ -4,7 +4,7 @@ import PCCard from "./components/pc-card.jsx";
 import PCGrid from "./components/pc-grid.jsx";
 
 const GGLEAP_ENDPOINT = import.meta.env.VITE_GGLEAP_ENDPOINT;
-const PCS_ENDPOINT = `gah`;
+const PCS_ENDPOINT = `${GGLEAP_ENDPOINT}/machines/uptime`;
 
 function App() {
   const [pcs, setPcs] = useState([]);
@@ -12,6 +12,8 @@ function App() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
+
+
     async function getPCSData() {
       try {
         const response = await fetch(PCS_ENDPOINT, {
