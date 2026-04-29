@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import "./App.css";
-import PCCard from "./components/pc-card.jsx";
 import PCGrid from "./components/pc-grid.jsx";
 
 const GGLEAP_ENDPOINT = import.meta.env.VITE_GGLEAP_ENDPOINT;
@@ -9,11 +8,9 @@ const PCS_ENDPOINT = `${GGLEAP_ENDPOINT}/machines/uptime`;
 function App() {
   const [pcs, setPcs] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const [error, setError] = useState(true);
 
   useEffect(() => {
-
-
     async function getPCSData() {
       try {
         const response = await fetch(PCS_ENDPOINT, {
@@ -57,11 +54,29 @@ function App() {
       <main>
         <p>these are all the computers</p>
 
-        {loading && <p>fetching data...</p>}
-        {error && <p style={{ color: "red" }}>gulp... error: {error}</p>}
-        <div className="pcgrid">
-          {!loading && !error && <PCGrid pcs={pcs} />}
-        </div>
+        {loading && (
+          <div className="loader">
+            <div className="loader-content">
+              <p>Loading...</p>
+              <img
+                src="/loading.gif"
+                alt="Loading..."
+                style={{ width: "150px" }}
+              />
+            </div>
+          </div>
+        )}
+
+        {error && (
+          <div className="error">
+            <div className="error-content">
+              <p>error. gulp...</p>
+              <img src="/error.gif" alt="error." style={{ width: "150px" }} />
+            </div>
+          </div>
+        )}
+
+        {!loading && !error && <PCGrid pcs={pcs} />}
       </main>
     </>
   );
