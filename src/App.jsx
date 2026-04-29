@@ -8,7 +8,7 @@ const PCS_ENDPOINT = `${GGLEAP_ENDPOINT}/machines/uptime`;
 function App() {
   const [pcs, setPcs] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     async function getPCSData() {
