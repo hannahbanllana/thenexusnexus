@@ -23,6 +23,7 @@ function PCGrid({ pcs }) {
             name={pc.name}
             time={`${pc.time[0]}h ${pc.time[1]}m`}
             status={pc.status}
+            mirrored={true}
           />
         ))}
       </div>

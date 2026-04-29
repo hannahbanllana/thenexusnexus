@@ -15,16 +15,16 @@ const getStatusClass = (status) => {
   }
 };
 
-function PCCard({ name, time, status }) {
-    return(
-        <div className="pc-card">
-            <div className="pc-info">
-                <h2>{name}</h2>
-                <p>{time}</p>
-            </div>
-            <div className={`pc-status ${getStatusClass(status)}`}></div>
-        </div>
-    );
+function PCCard({ name, time, status, mirrored }) {
+  return (
+    <div className={`pc-card ${mirrored ? "mirrored" : ""}`}>
+      <div className="pc-info">
+        <h2>{name}</h2>
+        <p>{time}</p>
+      </div>
+      <div className={`pc-status ${getStatusClass(status)}`}></div>
+    </div>
+  );
 }
 
 export default PCCard
