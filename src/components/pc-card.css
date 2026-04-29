@@ -1,0 +1,48 @@
+.pc-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background: #3f3a4a;
+  border-radius: 16px;
+  padding: 20px;
+  width: 320px;
+}
+
+.pc-info h2 {
+  margin: 0;
+  font-size: 24px;
+  color: white;
+}
+
+.pc-info p {
+  margin: 8px 0 0;
+  color: #ccc;
+}
+
+.pc-status {
+  width: 16px;
+  height: 80px;
+  border-radius: 8px;
+}
+
+/* Status colors */
+.pc-status.available {
+  background: #74D66F;
+}
+
+.pc-status.occupied {
+  background: #BF5C5C;
+}
+
+.pc-status.kickable {
+  background: #E3BC46;
+}
+
+.pc-status.reserved {
+  background: #8F6BB5;
+}
+
+.pc-status.offline {
+  background: #CCCCCC
+}
