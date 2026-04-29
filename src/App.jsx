@@ -76,7 +76,11 @@ function App() {
           </div>
         )}
 
-        {!loading && !error && <PCGrid pcs={pcs} />}
+        {!loading && !error && (
+          <div className="grid">
+            <PCGrid pcs={pcs} />
+          </div>
+        )}
       </main>
     </>
   );
