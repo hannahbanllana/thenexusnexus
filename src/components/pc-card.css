@@ -2,7 +2,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-
   background: #3C334A;
   border-radius: 16px;
   padding: 20px;
@@ -68,4 +67,28 @@
 
 .pc-status.Offline {
   background: #CCCCCC
+}
+
+@media (max-width: 600px) {
+  .pc-card {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px 12px;
+    border-radius: 12px;
+  }
+
+  .pc-info h2 {
+    font-size: 13px;
+  }
+
+  .pc-info p {
+    font-size: 11px;
+    margin-top: 4px;
+  }
+
+  .pc-status {
+    width: 10px;
+    height: 45px;
+    border-radius: 6px;
+  }
 }

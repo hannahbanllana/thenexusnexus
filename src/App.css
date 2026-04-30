@@ -15,7 +15,7 @@ main {
   display: flex;
   align-items: center;
   gap: 2rem;
-  padding: 10px 24px 10px 32px;
+  padding: 10px 52px 10px 32px;
 }
 
 .nav {
@@ -63,4 +63,24 @@ h2 {
   font-size: 1.2rem;
   font-weight: 500;
   margin: 0;
+}
+
+@media (max-width: 600px) {
+  .header-inner {
+    padding: 8px 12px;
+    gap: 0.5rem;
+  }
+
+  h1 {
+    font-size: 13px;
+  }
+
+  .nav-item {
+    font-size: 11px;
+    padding: 5px 8px;
+  }
+
+  .nav {
+    margin-right: 0;
+  }
 }

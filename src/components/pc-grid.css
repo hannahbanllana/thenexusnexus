@@ -3,11 +3,22 @@
   justify-content: center;
   gap: 1rem;
   padding-top: 18px;
-
 }
 
 .pc-column {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+}
+
+@media (max-width: 600px) {
+  .pc-grid {
+    gap: 0.5rem;
+    padding: 16px 12px;
+    margin-top: 8px;
+  }
+
+  .pc-column {
+    flex: 1;
+  }
 }
