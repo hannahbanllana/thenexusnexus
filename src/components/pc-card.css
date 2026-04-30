@@ -32,6 +32,7 @@
 .pc-info p {
   margin: 8px 0 0;
   color: #ccc;
+  word-spacing: -3px;
 }
 
 .pc-status {
