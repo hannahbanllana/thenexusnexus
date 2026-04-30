@@ -45,3 +45,19 @@
   color: #fff;
   opacity: 1;
 }
+
+@media (max-width: 600px) {
+  .hours-table {
+    width: calc(100vw - 48px);
+  }
+
+  .hours-row {
+    padding: 12px 16px;
+    font-size: 0.85rem;
+  }
+
+  .hours {
+    height: auto;
+    padding: 2rem 0;
+  }
+}
