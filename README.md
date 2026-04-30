@@ -20,6 +20,7 @@ check the status of the nexus gaming lounge computers without having to send /pc
 
 **features**
 - check the availability of nexus computers with ability to refresh/update data (i.e. /pcs)
+- check hours of nexus gaming lounge
 - [coming soon] see reservations made for a specific date (i.e. /reservations)
 
 ## to run locally
@@ -34,6 +35,6 @@ check the status of the nexus gaming lounge computers without having to send /pc
 
 </div>
 
-5. then `bun run dev` and a prayer
+5. then `bun run dev` and hope and pray it works
 
 
