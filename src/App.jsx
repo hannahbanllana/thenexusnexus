@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { NavLink, Routes, Route, useLocation } from "react-router-dom";
+import { Analytics } from "@vercel/analytics/react";
 import "./App.css";
 import PCGrid from "./components/pc-grid.jsx";
 import Loader from "./components/loader.jsx";
@@ -75,6 +76,7 @@ function App() {
 
   return (
     <>
+      <Analytics />
       <header className="header">
         <div className="header-inner">
           <NavLink
