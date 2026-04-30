@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { NavLink, Routes, Route } from "react-router-dom";
+import { NavLink, Routes, Route, useLocation } from "react-router-dom";
 import "./App.css";
 import PCGrid from "./components/pc-grid.jsx";
 import Loader from "./components/loader.jsx";
@@ -14,6 +14,7 @@ function App() {
   const [pcs, setPcs] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const location = useLocation();
 
   async function getPCSData() {
     try {
@@ -64,7 +65,6 @@ function App() {
               Reservations
             </NavLink>
           </nav>
-          <RefreshButton onClick={getPCSData} loading={loading} />
         </div>
       </header>
 
@@ -76,17 +76,17 @@ function App() {
               <>
                 {loading && <Loader />}
                 {error && <ErrorHandler />}
-                {!loading && !error && (
-                  <>
-                    <PCGrid pcs={pcs} />
-                  </>
-                )}
+                {!loading && !error && <PCGrid pcs={pcs} />}
               </>
             }
           />
           <Route path="/reservations" element={<Reservations />} />
         </Routes>
       </main>
+
+      {location.pathname === "/" && !loading && !error && (
+        <RefreshButton onClick={getPCSData} loading={loading} />
+      )}
     </>
   );
 }

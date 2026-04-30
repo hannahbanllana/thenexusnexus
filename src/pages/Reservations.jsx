@@ -5,7 +5,7 @@ export default function Reservations() {
     <div className="reservations">
       <div className="reservations-content">
         <h2>Reservations view coming soon</h2>
-        <img src="/coming soon.gif" alt="coming soon" />
+        <img src="/coming-soon.gif" alt="coming soon" />
       </div>
     </div>
   );
