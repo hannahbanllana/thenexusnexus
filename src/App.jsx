@@ -92,7 +92,7 @@ function App() {
                 "nav-item" + (isActive ? " active" : "")
               }
             >
-              PCs
+              pcs
             </NavLink>
             <NavLink
               to="/reservations"
@@ -100,7 +100,7 @@ function App() {
                 "nav-item" + (isActive ? " active" : "")
               }
             >
-              Reservations
+              reservations
             </NavLink>
             <NavLink
               to="/hours"
@@ -108,7 +108,7 @@ function App() {
                 "nav-item" + (isActive ? " active" : "")
               }
             >
-              Hours
+              hours
             </NavLink>
           </nav>
         </div>
