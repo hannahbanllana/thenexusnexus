@@ -46,10 +46,21 @@ function App() {
         <div className="header-inner">
           <h1>the nexus nexus</h1>
           <nav className="nav">
-            <NavLink to="/" end className={({ isActive }) => "nav-item" + (isActive ? " active" : "")}>
+            <NavLink
+              to="/"
+              end
+              className={({ isActive }) =>
+                "nav-item" + (isActive ? " active" : "")
+              }
+            >
               PCs
             </NavLink>
-            <NavLink to="/reservations" className={({ isActive }) => "nav-item" + (isActive ? " active" : "")}>
+            <NavLink
+              to="/reservations"
+              className={({ isActive }) =>
+                "nav-item" + (isActive ? " active" : "")
+              }
+            >
               Reservations
             </NavLink>
           </nav>
@@ -58,18 +69,21 @@ function App() {
 
       <main>
         <Routes>
-          <Route path="/" element={
-            <>
-              {loading && <Loader />}
-              {error && <ErrorHandler />}
-              {!loading && !error && (
-                <div style={{ position: "relative", paddingTop: "12px" }}>
-                  <RefreshButton onClick={getPCSData} loading={loading} />
-                  <PCGrid pcs={pcs} />
-                </div>
-              )}
-            </>
-          } />
+          <Route
+            path="/"
+            element={
+              <>
+                {loading && <Loader />}
+                {error && <ErrorHandler />}
+                {!loading && !error && (
+                  <div style={{ position: "relative", paddingTop: "12px" }}>
+                    <RefreshButton onClick={getPCSData} loading={loading} />
+                    <PCGrid pcs={pcs} />
+                  </div>
+                )}
+              </>
+            }
+          />
           <Route path="/reservations" element={<Reservations />} />
         </Routes>
       </main>
