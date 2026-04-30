@@ -10,6 +10,14 @@
 ## about
 check the status of the nexus gaming lounge computers without having to send /pcs command in northwestern esports discord server.
 
+<div align="center">
+
+
+### check it out here: [thenexusnexus](https://thenexusnexus.vercel.app/)
+
+
+</div>
+
 **features**
 - check the availability of nexus computers with ability to refresh/update data (i.e. /pcs)
 - [coming soon] see reservations made for a specific date (i.e. /reservations)
