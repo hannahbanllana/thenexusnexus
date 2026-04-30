@@ -8,7 +8,7 @@ main {
   top: 0;
   width: 100%;
   z-index: 1000;
-  background: #3C334A;
+  background:#2d2443;
   color: #fff;
 }
 
@@ -17,6 +17,7 @@ main {
   max-width: none;
   margin: 0;
   padding: 10px;
+  padding-left: 16px;
 }
 
 h1 {
