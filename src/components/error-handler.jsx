@@ -4,8 +4,8 @@ export default function ErrorHandler() {
   return (
     <div className="error">
       <div className="error-content">
-        <p>error. gulp...</p>
-        <img src="/error.gif" alt="error." style={{ width: "150px" }} />
+        <h2>error. gulp...</h2>
+        <img src="/error.gif" alt="error." style={{ width: "250px" }} />
       </div>
     </div>
   );
