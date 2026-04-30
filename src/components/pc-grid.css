@@ -2,6 +2,8 @@
   display: flex;
   justify-content: center;
   gap: 1rem;
+  padding-top: 18px;
+
 }
 
 .pc-column {

@@ -3,16 +3,9 @@ button {
   color: #3C3449;
   border: none;
   border-radius: 16px;
-  padding: 14px 28px;
-  text-align: center;
+  padding: 8px 20px;
   font-weight: 500;
   font-family: inherit;
-  display: block;
-  margin: 0 auto;
-
-  position: absolute;
-  right: 12px;
-
 }
 
 button:hover:not(:disabled) {

@@ -1,5 +1,4 @@
 main {
-  height: 100vh;
   display: flex;
   flex-direction: column;
 }
@@ -16,13 +15,14 @@ main {
   display: flex;
   align-items: center;
   gap: 2rem;
-  padding: 10px 10px 10px 24px;
+  padding: 10px 24px 10px 32px;
 }
 
 .nav {
   display: flex;
   gap: 0.5rem;
   margin-left: auto;
+  margin-right: -1.5rem;
 }
 
 .nav-item {
@@ -51,8 +51,16 @@ h1 {
   font-weight: 600;
   margin: 0;
   word-spacing: -8px;
+  white-space: nowrap;
 }
 
 body {
+  margin: 0;
+}
+
+
+h2 {
+  font-size: 1.2rem;
+  font-weight: 500;
   margin: 0;
 }

@@ -64,6 +64,7 @@ function App() {
               Reservations
             </NavLink>
           </nav>
+          <RefreshButton onClick={getPCSData} loading={loading} />
         </div>
       </header>
 
@@ -76,10 +77,9 @@ function App() {
                 {loading && <Loader />}
                 {error && <ErrorHandler />}
                 {!loading && !error && (
-                  <div style={{ position: "relative", paddingTop: "12px" }}>
-                    <RefreshButton onClick={getPCSData} loading={loading} />
+                  <>
                     <PCGrid pcs={pcs} />
-                  </div>
+                  </>
                 )}
               </>
             }
