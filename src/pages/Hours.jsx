@@ -1,13 +1,13 @@
 import "./Hours.css";
 
 const HOURS = [
-  { day: "Monday", time: "2:30 PM – 10:30 PM" },
-  { day: "Tuesday", time: "2:30 PM – 10:30 PM" },
-  { day: "Wednesday", time: "2:30 PM – 10:30 PM" },
-  { day: "Thursday", time: "2:30 PM – 10:30 PM" },
-  { day: "Friday", time: "12:30 PM – 10:30 PM" },
-  { day: "Saturday", time: "12:30 PM – 10:30 PM" },
-  { day: "Sunday", time: "2:30 PM – 10:30 PM" },
+  { day: "sunday", time: "2:30 PM – 10:30 PM" },
+  { day: "monday", time: "2:30 PM – 10:30 PM" },
+  { day: "tuesday", time: "2:30 PM – 10:30 PM" },
+  { day: "wednesday", time: "2:30 PM – 10:30 PM" },
+  { day: "thursday", time: "2:30 PM – 10:30 PM" },
+  { day: "friday", time: "12:30 PM – 10:30 PM" },
+  { day: "saturday", time: "12:30 PM – 10:30 PM" },
 ];
 
 export default function Hours() {
