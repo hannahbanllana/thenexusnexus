@@ -77,7 +77,13 @@ function App() {
     <>
       <header className="header">
         <div className="header-inner">
-          <h1>the nexus nexus</h1>
+          <NavLink
+            to="/"
+            end
+            style={{ textDecoration: "none", color: "inherit" }}
+          >
+            <h1>the nexus nexus</h1>
+          </NavLink>
           <nav className="nav">
             <NavLink
               to="/"
