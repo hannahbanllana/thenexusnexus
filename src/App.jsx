@@ -6,6 +6,8 @@ import Loader from "./components/loader.jsx";
 import ErrorHandler from "./components/error-handler.jsx";
 import RefreshButton from "./components/refresh-button.jsx";
 import Reservations from "./pages/Reservations.jsx";
+import ClosedHandler from "./components/closed-handler.jsx";
+import Hours from "./pages/Hours.jsx";
 
 const GGLEAP_ENDPOINT = import.meta.env.VITE_GGLEAP_ENDPOINT;
 const PCS_ENDPOINT = `${GGLEAP_ENDPOINT}/machines/uptime`;
@@ -15,6 +17,34 @@ function App() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const location = useLocation();
+
+  function isNexusOpen() {
+    const now = new Date();
+    const parts = new Intl.DateTimeFormat("en-US", {
+      timeZone: "America/Chicago",
+      hour: "numeric",
+      minute: "numeric",
+      hour12: false,
+      weekday: "short",
+    }).formatToParts(now);
+
+    const hour = parseInt(parts.find((p) => p.type === "hour").value);
+    const minute = parseInt(parts.find((p) => p.type === "minute").value);
+    const day = parts.find((p) => p.type === "weekday").value;
+
+    const time = hour * 60 + minute;
+    const close = 22 * 60 + 30;
+
+    if (["Mon", "Tue", "Wed", "Thu", "Sun"].includes(day)) {
+      return time >= 14 * 60 + 30 && time < close;
+    }
+
+    if (["Fri", "Sat"].includes(day)) {
+      return time >= 12 * 60 + 30 && time < close;
+    }
+
+    return false;
+  }
 
   async function getPCSData() {
     try {
@@ -41,6 +71,8 @@ function App() {
     getPCSData();
   }, []);
 
+  const nexusOpen = isNexusOpen();
+
   return (
     <>
       <header className="header">
@@ -64,6 +96,14 @@ function App() {
             >
               Reservations
             </NavLink>
+            <NavLink
+              to="/hours"
+              className={({ isActive }) =>
+                "nav-item" + (isActive ? " active" : "")
+              }
+            >
+              Hours
+            </NavLink>
           </nav>
         </div>
       </header>
@@ -76,11 +116,13 @@ function App() {
               <>
                 {loading && <Loader />}
                 {error && <ErrorHandler />}
-                {!loading && !error && <PCGrid pcs={pcs} />}
+                {!loading && !error && !nexusOpen && <ClosedHandler />}
+                {!loading && !error && nexusOpen && <PCGrid pcs={pcs} />}
               </>
             }
           />
           <Route path="/reservations" element={<Reservations />} />
+          <Route path="/hours" element={<Hours />} />
         </Routes>
       </main>
 

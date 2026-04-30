@@ -1,0 +1,26 @@
+.closed {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+}
+
+.closed-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.hours-link {
+  color: #c4b5fd;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: bold;
+  opacity: 0.7;
+  transition: opacity 0.15s;
+}
+
+.hours-link:hover {
+  opacity: 1;
+}
