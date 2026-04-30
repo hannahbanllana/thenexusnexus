@@ -4,8 +4,8 @@ export default function Loader() {
   return (
     <div className="loader">
       <div className="loader-content">
-        <p>Loading...</p>
-        <img src="/loading.gif" alt="Loading..." style={{ width: "150px" }} />
+        <h2>Loading...</h2>
+        <img src="/loading.gif" alt="Loading..." style={{ width: "250px" }} />
       </div>
     </div>
   );
