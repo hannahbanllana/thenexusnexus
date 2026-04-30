@@ -13,11 +13,37 @@ main {
 }
 
 .header-inner {
-  width: 100%;
-  max-width: none;
-  margin: 0;
-  padding: 10px;
-  padding-left: 16px;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 10px 10px 10px 24px;
+}
+
+.nav {
+  display: flex;
+  gap: 0.5rem;
+  margin-left: auto;
+}
+
+.nav-item {
+  color: #fff;
+  text-decoration: none;
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-size: 14px;
+  opacity: 0.6;
+  transition: opacity 0.15s, background-color 0.15s;
+}
+
+.nav-item:hover {
+  opacity: 1;
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+.nav-item.active {
+  opacity: 1;
+  background-color: rgba(196, 181, 253, 0.2);
+  color: #c4b5fd;
 }
 
 h1 {
