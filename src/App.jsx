@@ -7,6 +7,7 @@ import ErrorHandler from "./components/error-handler.jsx";
 import RefreshButton from "./components/refresh-button.jsx";
 import Reservations from "./pages/Reservations.jsx";
 import ClosedHandler from "./components/closed-handler.jsx";
+import Hours from "./pages/Hours.jsx";
 
 const GGLEAP_ENDPOINT = import.meta.env.VITE_GGLEAP_ENDPOINT;
 const PCS_ENDPOINT = `${GGLEAP_ENDPOINT}/machines/uptime`;
@@ -95,6 +96,14 @@ function App() {
             >
               Reservations
             </NavLink>
+            <NavLink
+              to="/hours"
+              className={({ isActive }) =>
+                "nav-item" + (isActive ? " active" : "")
+              }
+            >
+              Hours
+            </NavLink>
           </nav>
         </div>
       </header>
@@ -113,6 +122,7 @@ function App() {
             }
           />
           <Route path="/reservations" element={<Reservations />} />
+          <Route path="/hours" element={<Hours />} />
         </Routes>
       </main>
 
