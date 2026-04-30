@@ -19,6 +19,10 @@
   align-items: flex-end;
 }
 
+.pc-card.mirrored .more-info {
+  align-items: flex-end;
+}
+
 .pc-info h2 {
   margin: 0;
   font-size: 24px;
@@ -36,23 +40,31 @@
   border-radius: 8px;
 }
 
+.more-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-top: auto;
+  align-items: flex-start; /* 👈 ensures consistent left alignment */
+}
+
 /* Status colors */
-.pc-status.available {
+.pc-status.Available {
   background: #74D66F;
 }
 
-.pc-status.occupied {
+.pc-status.Occupied {
   background: #BF5C5C;
 }
 
-.pc-status.kickable {
+.pc-status.Kickable {
   background: #E3BC46;
 }
 
-.pc-status.reserved {
+.pc-status.Reserved {
   background: #8F6BB5;
 }
 
-.pc-status.offline {
+.pc-status.Offline {
   background: #CCCCCC
 }
