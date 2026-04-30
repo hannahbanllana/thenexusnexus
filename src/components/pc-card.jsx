@@ -1,13 +1,17 @@
 import "./pc-card.css";
 
-const getStatusClass = (status) => {
+const getStatusClass = (status, time) => {
+  if (time && time[0] >= 2 && status === "UserLoggedIn") {
+    return "Kickable";
+  }
+  
   switch (status) {
     case "ReadyForUser":
       return "Available";
     case "UserLoggedIn":
       return "Occupied";
     case "AdminMode":
-      return "Occupied"; // or "kickable" if you prefer
+      return "Occupied";
     case "Off":
       return "Offline";
     default:
@@ -21,11 +25,11 @@ function PCCard({ name, time, status, mirrored }) {
       <div className="pc-info">
         <h2>{name}</h2>
         <div className="more-info">
-          <p>{getStatusClass(status)}</p>
+          <p>{getStatusClass(status, time)}</p>
           <p>{time}</p>
         </div>
       </div>
-      <div className={`pc-status ${getStatusClass(status)}`}></div>
+      <div className={`pc-status ${getStatusClass(status, time)}`}></div>
     </div>
   );
 }
