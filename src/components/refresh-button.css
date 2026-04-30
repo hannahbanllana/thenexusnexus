@@ -8,6 +8,10 @@ button {
   font-family: inherit;
   display: block;
   margin: 0 auto;
+
+  position: absolute;
+  right: 12px;
+  
 }
 
 button:hover:not(:disabled) {

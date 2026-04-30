@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import "./App.css";
 import PCGrid from "./components/pc-grid.jsx";
 import Loader from "./components/loader.jsx";
-import ErrorHandler from "./components/error-handler.jsx"
+import ErrorHandler from "./components/error-handler.jsx";
 import RefreshButton from "./components/refresh-button.jsx";
 
 const GGLEAP_ENDPOINT = import.meta.env.VITE_GGLEAP_ENDPOINT;
@@ -55,12 +55,14 @@ function App() {
       </header>
 
       <main>
-        <p>these are all the computers</p>
-        <RefreshButton />
-
         {loading && <Loader />}
         {error && <ErrorHandler />}
-        {!loading && !error && <PCGrid pcs={pcs} />}
+        {!loading && !error && (
+          <div style={{ position: "relative", paddingTop: "12px" }}>
+            <RefreshButton onClick={getPCSData} loading={loading} />
+            <PCGrid pcs={pcs} />
+          </div>
+        )}
       </main>
     </>
   );
