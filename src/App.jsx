@@ -68,11 +68,13 @@ function App() {
     }
   }
 
-  useEffect(() => {
-    getPCSData();
-  }, []);
-
   const nexusOpen = isNexusOpen();
+
+  useEffect(() => {
+    if (nexusOpen) {
+      getPCSData();
+    }
+  }, []);
 
   return (
     <>
