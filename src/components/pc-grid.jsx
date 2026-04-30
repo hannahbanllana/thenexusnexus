@@ -1,12 +1,13 @@
-import PCCard from "./pc-card.jsx";
+ import PCCard from "./pc-card.jsx";
+import "./pc-grid.css";
 
 function PCGrid({ pcs }) {
   const col1 = pcs.slice(0, 5);
   const col2 = pcs.slice(5, 10);
 
   return (
-    <div style={{ display: "flex", gap: "1rem" }}>
-      <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
+    <div className="pc-grid">
+      <div className="pc-column">
         {col1.map((pc) => (
           <PCCard
             key={pc.name}
@@ -16,7 +17,8 @@ function PCGrid({ pcs }) {
           />
         ))}
       </div>
-      <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
+
+      <div className="pc-column">
         {col2.map((pc) => (
           <PCCard
             key={pc.name}
