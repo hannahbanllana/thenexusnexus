@@ -2,7 +2,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 70vh;
+  padding-top: 60px;
+  min-height: 55vh;
 }
 
 .hours-content {
