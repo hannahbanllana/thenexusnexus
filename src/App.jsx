@@ -73,6 +73,8 @@ function App() {
   useEffect(() => {
     if (nexusOpen) {
       getPCSData();
+    } else {
+      setLoading(false);
     }
   }, []);
 
